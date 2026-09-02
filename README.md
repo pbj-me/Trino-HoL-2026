@@ -819,11 +819,11 @@ SELECT
   o.city as origion,
   d.city as destination,
   f.uniquecarrier ,
-  COUNT(c.complaint_id) AS complaint_volume  
+  COUNT(c.complaint_id) AS complaint_volume
 FROM postgres.airlinedata.customer_complaints c
-JOIN iceberg.${your_dbname}.fct_flights f ON c.uniquecarrier = f.uniquecarrier AND c.flightnum = cast ( f.flightnum as varchar)
-JOIN iceberg.${your_dbname}.dim_airports o ON f.origin = o.iata
-JOIN iceberg.${your_dbname}.dim_airports d ON f.dest = d.iata
+JOIN iceberg.cpearce.fct_flights f ON c.uniquecarrier = f.uniquecarrier AND c.flightnum = cast ( f.flightnum as varchar)
+JOIN iceberg.cpearce.dim_airports o ON f.origin = o.iata
+JOIN iceberg.cpearce.dim_airports d ON f.dest = d.iata
 GROUP BY 1,2,3,4
 ORDER BY 2 DESC;
 ```
