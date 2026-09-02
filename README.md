@@ -815,18 +815,17 @@ Enter SQL below:
 
 ```sql
 SELECT
-    o.city || ' to ' || d.city AS route,
-    o.city as origion,
-    d.city as destination,
-    f.uniquecarrier ,
-    COUNT(c.complaint_id) AS complaint_volume  
+  o.city || ' to ' || d.city AS route,
+  o.city as origion,
+  d.city as destination,
+  f.uniquecarrier ,
+  COUNT(c.complaint_id) AS complaint_volume  
 FROM postgres.airlinedata.customer_complaints c
-JOIN iceberg.db_user001.fct_flights f ON c.uniquecarrier = f.uniquecarrier AND c.flightnum = cast ( f.flightnum as varchar)
-JOIN iceberg.db_user001.dim_airports o ON f.origin = o.iata
-JOIN iceberg.db_user001.dim_airports d ON f.dest = d.iata
-WHERE f.year = 2000
+JOIN iceberg.${your_dbname}.fct_flights f ON c.uniquecarrier = f.uniquecarrier AND c.flightnum = cast ( f.flightnum as varchar)
+JOIN iceberg.${your_dbname}.dim_airports o ON f.origin = o.iata
+JOIN iceberg.${your_dbname}.dim_airports d ON f.dest = d.iata
 GROUP BY 1,2,3,4
-ORDER BY 2 DESC
+ORDER BY 2 DESC;
 ```
 
 Click on Show Data
