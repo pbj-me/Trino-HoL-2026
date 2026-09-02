@@ -739,37 +739,37 @@ First we are going to create a series of tables in your work database.
 In the SQL editor, select your database and run this script:
 
 ```sql
-CREATE TABLE emp_fname (id int, fname string);
-insert into emp_fname(id, fname) values (1, 'Carl'),(2, 'Clarence');
+CREATE TABLE hive.${your_dbname}.emp_fname (id int, fname varchar);
+insert into hive.${your_dbname}.emp_fname(id, fname) values (1, 'Carl'),(2, 'Clarence');
 
-CREATE TABLE emp_lname (id int, lname string);
-insert into emp_lname(id, lname) values (1, 'Rickenbacker'), (2, 'Fender');
+CREATE TABLE hive.${your_dbname}.emp_name (id int, lname varchar);
+insert into hive.${your_dbname}.emp_name(id, lname) values (1, 'Rickenbacker'), (2, 'Fender');
 
-CREATE TABLE emp_age (id int, age smallint);
-insert into emp_age(id, age) values (1, 35),(2, 55);
+CREATE TABLE hive.${your_dbname}.emp_age (id int, age smallint);
+insert into hive.${your_dbname}.emp_age(id, age) values (1, 35),(2, 55);
 
-CREATE TABLE emp_denom (id int, denom char(2), email string);
-insert into emp_denom(id, denom, email) values (1, 'rk','cr@yahoo.com'),(2, 'na','cfender@gmail.com');
+CREATE TABLE hive.${your_dbname}.emp_denom (id int, denom char(2), email varchar);
+insert into hive.${your_dbname}.emp_denom(id, denom, email) values (1, 'rk','cr@yahoo.com'),(2, 'na','cfender@gmail.com');
 
-CREATE TABLE emp_id (id int, empid integer);
-insert into emp_id(id, empid) values (1, 1146651),(2, 239125);
+CREATE TABLE hive.${your_dbname}.emp_id (id int, empid integer);
+insert into hive.${your_dbname}.emp_id(id, empid) values (1, 1146651),(2, 239125);
 
-CREATE TABLE emp_all as
-  (select a.id, a.fname, b.lname, c.age, d.denom,d.email,e.empid from emp_fname a
-	inner join emp_lname b on b.id = a.id
-	inner join emp_age c on c.id = b.id
-	inner join emp_denom d on d.id = c.id
-	inner join emp_id e on e.id = d.id);
+CREATE TABLE hive.${your_dbname}.emp_all as
+  (select a.id, a.fname, b.lname, c.age, d.denom,d.email,e.empid from hive.${your_dbname}.emp_fname a
+	inner join hive.${your_dbname}.emp_name b on b.id = a.id
+	inner join hive.${your_dbname}.emp_age c on c.id = b.id
+	inner join hive.${your_dbname}.emp_denom d on d.id = c.id
+	inner join hive.${your_dbname}.emp_id e on e.id = d.id);
 
-create table emp_younger as (select * from emp_all where emp_all.age <= 45);
+create table hive.${your_dbname}.emp_younger as (select * from hive.${your_dbname}.emp_all where emp_all.age <= 45);
 
-create table emp_older as (select * from emp_all where emp_all.age > 45);
+create table hive.${your_dbname}.emp_older as (select * from hive.${your_dbname}.emp_all where emp_all.age > 45);
 ```
 
 After this script executes, a simple
 
 ```sql
-select * from emp_all;
+select * from hive.${your_dbname}.emp_all;
 ```
 
 … should give the contents of the emp\_all table, which only has a couple of lines of data.
