@@ -75,7 +75,7 @@ CREATE TABLE hive.${your_dbname}.flights_csv (
 WITH (
     format = 'CSV',
     csv_separator = ',',
-    external_location = 's3a://trino-hol-cp-buk-498916c0/data/flights',
+    external_location = 's3a://trino-hol-cp-buk-498916c0/data/flights_csv/flights_csv.csv',
     skip_header_line_count = 1
 );
 
