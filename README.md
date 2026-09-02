@@ -185,9 +185,9 @@ SELECT
   -- 1. NULLIF turns '' into NULL
   -- 2. CAST turns NULL (or the string) into an INTEGER
   -- 3. COALESCE turns that resulting NULL into 0
-  sum(coalesce(cast(nullif(depdelay, '') as integer), 0)) AS departure_delay_minutes,
+  sum(coalesce(try_cast(nullif(depdelay, '') as integer), 0)) AS departure_delay_minutes,
 
-  sum(case when coalesce(cast(nullif(depdelay, '') as integer), 0) > 0 then 1 else 0 end) as departure_delay_count
+  sum(case when coalesce(try_cast(nullif(depdelay, '') as integer), 0) > 0 then 1 else 0 end) as departure_delay_count
 FROM
   hive.${your_dbname}.flights_csv
 GROUP BY
