@@ -681,8 +681,7 @@ Lets explore a important component of the data security that the dynamic policy 
 In this example we defined a dynamic masking policy on the ***customer_email*** to redact the field.
 
 
-![](images/rangerpolicy.png)<img width="485" height="277" alt="rangerpolicy" src="https://github.com/user-attachments/assets/2c9aeb30-5b7a-45a8-866a-d4506a1125d2" />
-
+![](images/rangerpolicy.png)
 
 Query the data
 
