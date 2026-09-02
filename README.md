@@ -13,7 +13,6 @@ Star Schema Diagram of tables we use in todays workshop:
 - federation table: customer_complains (50k rows)
 
 ![](images/starschema001.png)
-#<img width="578" height="322" alt="starschema001" src="https://github.com/user-attachments/assets/5bb21eb7-8a6e-43d5-827a-a267f74f3967" />
 
 
 -----
@@ -525,12 +524,11 @@ Expect output
 
 To visualize that in a map select Marker Map from the drop down lists
 
-<img width="476" height="369" alt="cdw-geoquery-001" src="https://github.com/user-attachments/assets/b49a9615-dc96-4dd7-a38f-0baad746ac9c" />
+![](images/cdw-geoquery-001.png)
 
 and select the fields lon = Longitude and lat = Latitude for the Map
 
-<img width="1139" height="418" alt="cdw-geoquery-002" src="https://github.com/user-attachments/assets/dd07090e-2442-45fd-b675-79816ddc4c57" />
-
+![](images/cdw-geoquery-002.png)
 
 ### Surrogate Key 
 
@@ -628,7 +626,7 @@ Expected outcome
 
 Lets create a federated query with dataset from PostgreSQL and Iceberg.
 
-![](images/fq-sample001.png)<img width="468" height="314" alt="fq-sample001" src="https://github.com/user-attachments/assets/96cdd63c-97a3-44e0-a7e0-06de52fe1d69" />
+![](images/fq-sample001.png)
 
 
 
