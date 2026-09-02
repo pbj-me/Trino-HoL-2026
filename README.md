@@ -224,8 +224,8 @@ CREATE TABLE iceberg.${your_dbname}.dim_airlines
 WITH (format = 'PARQUET')
 AS
 SELECT
-    code,
-    description
+  code,
+  description
 FROM hive.${your_dbname}.airlines_csv;
 
 -- 2. Airports Table
@@ -234,13 +234,13 @@ CREATE TABLE iceberg.${your_dbname}.dim_airports
 WITH (format = 'PARQUET')
 AS
 SELECT
-    iata,
-    airport,
-    city,
-    state,
-    country,
-    CAST(lat AS DOUBLE) as lat,
-    CAST(lon AS DOUBLE) as lon
+  iata,
+  airport,
+  city,
+  state,
+  country,
+  TRY_CAST(lat AS DOUBLE) as lat,
+  TRY_CAST(lon AS DOUBLE) as lon
 FROM hive.${your_dbname}.airports_csv;
 
 -- 3. Planes Table
@@ -249,49 +249,49 @@ CREATE TABLE iceberg.${your_dbname}.dim_planes
 WITH (format = 'PARQUET')
 AS
 SELECT
-    tailnum, owner_type, manufacturer, issue_date, model,
-    status, aircraft_type, engine_type,
-    CAST(NULLIF(year, '') AS INTEGER) as year
+  tailnum, owner_type, manufacturer, issue_date, model,
+  status, aircraft_type, engine_type,
+  TRY_CAST(NULLIF(year, '') AS INTEGER) as year
 FROM hive.${your_dbname}.planes_csv;
 
 -- 4. Flights Table (Partitioned by Year)
 DROP TABLE IF EXISTS iceberg.${your_dbname}.fct_flights;
 CREATE TABLE iceberg.${your_dbname}.fct_flights
 WITH (
-    format = 'PARQUET',
-    partitioning = ARRAY['year']
+  format = 'PARQUET',
+  partitioning = ARRAY['year']
 )
 AS
 SELECT
-    CAST(NULLIF(year, '') AS INTEGER) as year,
-    CAST(NULLIF(month, '') AS INTEGER) as month,
-    CAST(NULLIF(dayofmonth, '') AS INTEGER) as dayofmonth,
-    CAST(NULLIF(dayofweek, '') AS INTEGER) as dayofweek,
-    CAST(NULLIF(deptime, '') AS INTEGER) as deptime,
-    CAST(NULLIF(crsdeptime, '') AS INTEGER) as crsdeptime,
-    CAST(NULLIF(arrtime, '') AS INTEGER) as arrtime,
-    CAST(NULLIF(crsarrtime, '') AS INTEGER) as crsarrtime,
-    uniquecarrier,
-    CAST(NULLIF(flightnum, '') AS INTEGER) as flightnum,
-    tailnum,
-    CAST(NULLIF(actualelapsedtime, '') AS INTEGER) as actualelapsedtime,
-    CAST(NULLIF(crselapsedtime, '') AS INTEGER) as crselapsedtime,
-    CAST(NULLIF(airtime, '') AS INTEGER) as airtime,
-    CAST(NULLIF(arrdelay, '') AS INTEGER) as arrdelay,
-    CAST(NULLIF(depdelay, '') AS INTEGER) as depdelay,
-    origin,
-    dest,
-    CAST(NULLIF(distance, '') AS INTEGER) as distance,
-    CAST(NULLIF(taxiin, '') AS INTEGER) as taxiin,
-    CAST(NULLIF(taxiout, '') AS INTEGER) as taxiout,
-    CAST(NULLIF(cancelled, '') AS INTEGER) as cancelled,
-    cancellationcode,
-    diverted,
-    CAST(NULLIF(carrierdelay, '') AS INTEGER) as carrierdelay,
-    CAST(NULLIF(weatherdelay, '') AS INTEGER) as weatherdelay,
-    CAST(NULLIF(nasdelay, '') AS INTEGER) as nasdelay,
-    CAST(NULLIF(securitydelay, '') AS INTEGER) as securitydelay,
-    CAST(NULLIF(lateaircraftdelay, '') AS INTEGER) as lateaircraftdelay
+  TRY_CAST(NULLIF(year, '') AS INTEGER) as year,
+  TRY_CAST(NULLIF(month, '') AS INTEGER) as month,
+  TRY_CAST(NULLIF(dayofmonth, '') AS INTEGER) as dayofmonth,
+  TRY_CAST(NULLIF(dayofweek, '') AS INTEGER) as dayofweek,
+  TRY_CAST(NULLIF(deptime, '') AS INTEGER) as deptime,
+  TRY_CAST(NULLIF(crsdeptime, '') AS INTEGER) as crsdeptime,
+  TRY_CAST(NULLIF(arrtime, '') AS INTEGER) as arrtime,
+  TRY_CAST(NULLIF(crsarrtime, '') AS INTEGER) as crsarrtime,
+  uniquecarrier,
+  TRY_CAST(NULLIF(flightnum, '') AS INTEGER) as flightnum,
+  tailnum,
+  TRY_CAST(NULLIF(actualelapsedtime, '') AS INTEGER) as actualelapsedtime,
+  TRY_CAST(NULLIF(crselapsedtime, '') AS INTEGER) as crselapsedtime,
+  TRY_CAST(NULLIF(airtime, '') AS INTEGER) as airtime,
+  TRY_CAST(NULLIF(arrdelay, '') AS INTEGER) as arrdelay,
+  TRY_CAST(NULLIF(depdelay, '') AS INTEGER) as depdelay,
+  origin,
+  dest,
+  TRY_CAST(NULLIF(distance, '') AS INTEGER) as distance,
+  TRY_CAST(NULLIF(taxiin, '') AS INTEGER) as taxiin,
+  TRY_CAST(NULLIF(taxiout, '') AS INTEGER) as taxiout,
+  TRY_CAST(NULLIF(cancelled, '') AS INTEGER) as cancelled,
+  cancellationcode,
+  diverted,
+  TRY_CAST(NULLIF(carrierdelay, '') AS INTEGER) as carrierdelay,
+  TRY_CAST(NULLIF(weatherdelay, '') AS INTEGER) as weatherdelay,
+  TRY_CAST(NULLIF(nasdelay, '') AS INTEGER) as nasdelay,
+  TRY_CAST(NULLIF(securitydelay, '') AS INTEGER) as securitydelay,
+  TRY_CAST(NULLIF(lateaircraftdelay, '') AS INTEGER) as lateaircraftdelay
 FROM hive.${your_dbname}.flights_csv;
 
 ```
