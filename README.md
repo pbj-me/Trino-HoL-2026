@@ -496,7 +496,9 @@ SELECT
     a.airport,
     a.city,
     -- Calculate distance using built-in Great Circle function
-    ROUND(great_circle_distance(a.lat, a.lon, r.ref_lat, r.ref_lon), 2) AS distance_km
+    ROUND(great_circle_distance(a.lat, a.lon, r.ref_lat, r.ref_lon), 2) AS distance_km,
+    lon,
+    lat
 FROM
     iceberg.${your_dbname}.dim_airports a
 CROSS JOIN
