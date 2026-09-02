@@ -75,7 +75,7 @@ CREATE TABLE hive.${your_dbname}.flights_csv (
 WITH (
     format = 'CSV',
     csv_separator = ',',
-    external_location = 's3a://goes-se-sandbox/data/airlinedata-csv/flights',
+    external_location = 's3a://trino-hol-cp-buk-498916c0/data/flights',
     skip_header_line_count = 1
 );
 
@@ -95,7 +95,7 @@ CREATE TABLE hive.${your_dbname}.planes_csv (
 WITH (
     format = 'CSV',
     csv_separator = ',',
-    external_location = 's3a://goes-se-sandbox/data/airlinedata-csv/planes',
+    external_location = 'ss3a://trino-hol-cp-buk-498916c0/data/planes',
     skip_header_line_count = 1
 );
 
@@ -108,7 +108,7 @@ CREATE TABLE hive.${your_dbname}.airlines_csv (
 WITH (
     format = 'CSV',
     csv_separator = ',',
-    external_location = 's3a://goes-se-sandbox/data/airlinedata-csv/airlines',
+    external_location = 'ss3a://trino-hol-cp-buk-498916c0/data/airlines',
     skip_header_line_count = 1
 );
 
@@ -126,7 +126,7 @@ CREATE TABLE hive.${your_dbname}.airports_csv (
 WITH (
     format = 'CSV',
     csv_separator = ',',
-    external_location = 's3a://goes-se-sandbox/data/airlinedata-csv/airports',
+    external_location = 's3a://trino-hol-cp-buk-498916c0/data/airports',
     skip_header_line_count = 1
 );
 
