@@ -851,18 +851,15 @@ Select the dimenions (three fields)
 
 Click on SEE ALL VISUALS
 
-![](images/cdwlab10-0013.png)<img width="800" height="597" alt="cdwlab10-0013" src="https://github.com/user-attachments/assets/7d0bc3c7-4c9c-4875-9ae0-77f9d0d5a228" />
-
+![](images/cdwlab10-0013.png)
 
 Scroll up/down and select one of the proposed visuals i.e. Scattered w/Trendline
 
-![](images/cdwlab10-0014.png)<img width="820" height="785" alt="cdwlab10-0014" src="https://github.com/user-attachments/assets/20a19952-856f-4a5c-8ea9-ca555cc94ab8" />
-
+![](images/cdwlab10-0014.png)
 
 The selected visual appears in the window.
 
-![](images/cdwlab10-0015.png)<img width="1699" height="702" alt="cdwlab10-0015" src="https://github.com/user-attachments/assets/b327cb14-2e8f-443f-9793-db2278b6b78c" />
-
+![](images/cdwlab10-0015.png)
 
 This show a fast Dashboard creation.
 
