@@ -24,10 +24,10 @@ Create new schema for your user to be used, or use one that is already created f
 
 ```sql
 -- 1. Create the schema in the catalogs for Hive and Iceberg
-CREATE SCHEMA db_user001;
+CREATE SCHEMA your_dbname;
 
 -- 2. Switch your session context to the Iceberg catalog and your new schema
-USE iceberg.db_user001;
+USE iceberg.your_dbname;
 
 -- 3. Verify your context (should show 'iceberg' and 'db_user0')
 SELECT current_catalog, current_schema;
