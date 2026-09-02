@@ -725,6 +725,7 @@ where
  Done. 0 results.
 
  This ensures that even if an unauthorized user knows a specific email address, Cloudera SDX prevents them from confirming its existence or accessing the record.
+ 
 ## Lab - Data Security & Governance
 
 The combination of the Data Warehouse with SDX offers a list of powerful features like rule-based masking columns based on a user’s role and/or group association or rule-based row filters.
@@ -798,9 +799,7 @@ The red circle marks the currently selected entity. Atlas will always display th
 
 A example of dashboard:
 
-![](images/dataviz-010.png)<img width="753" height="803" alt="dataviz-010" src="https://github.com/user-attachments/assets/7810b442-65bd-4e1e-ba8f-6b077906c766" />
-
-
+![](images/dataviz-010.png)
 
 A quick way to create a new dashboard by the following steps:
 
@@ -834,18 +833,16 @@ Click on CREATE
 
 This Dataset shows and click on New Dashboard
 
-![](images/cdwlab10-0010.png)<img width="869" height="271" alt="cdwlab10-0010" src="https://github.com/user-attachments/assets/bdde44d7-f912-42cd-91f0-73a1d206b66d" />
+![](images/cdwlab10-0010.png)
 
 
 The UI create a new visual screen and click on Explore Options in the upper right corner.
 
-![](images/cdwlab10-0011.png)<img width="690" height="364" alt="cdwlab10-0011" src="https://github.com/user-attachments/assets/80373ae4-8e79-46a1-ada9-91931c2da943" />
-
+![](images/cdwlab10-0011.png)
 
 Click on Visual Types
 
-![](images/cdwlab10-0012.png)<img width="721" height="410" alt="cdwlab10-0012" src="https://github.com/user-attachments/assets/409bbd51-9d7c-4ebc-918b-3c901a384412" />
-
+![](images/cdwlab10-0012.png)
 
 Select the dimenions (three fields)
 - Routes
