@@ -12,7 +12,8 @@ Star Schema Diagram of tables we use in todays workshop:
 - dimension tables: airlines (1.5k rows), airports (3.3k rows) and planes (5k rows)
 - federation table: customer_complains (50k rows)
 
-![](images/starschema001.png)<img width="578" height="322" alt="starschema001" src="https://github.com/user-attachments/assets/5bb21eb7-8a6e-43d5-827a-a267f74f3967" />
+![](images/starschema001.png)
+#<img width="578" height="322" alt="starschema001" src="https://github.com/user-attachments/assets/5bb21eb7-8a6e-43d5-827a-a267f74f3967" />
 
 
 -----
