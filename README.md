@@ -456,26 +456,6 @@ Expected Output:
 | Northwest Airlines Inc. |	SEA to BOS |	2496 | 295 |
 
 
-### SQL AI Assistant - makes SQL development faster, easier, and less error-prone
-
-The SQL AI Assistant is an AI-powered tool designed to enhance SQL development, making it faster, more intuitive, and less prone to errors. By leveraging advanced contextual understanding of your data, it provides accurate and relevant SQL code suggestions that improve productivity. Integrated into Hue within Cloudera, this assistant harnesses the capabilities of Large Language Models (LLMs) for a range of SQL tasks, including query creation, editing, optimization, debugging, and summarization.
-
-Click on the blue dot to launch the SQL AI Assistant
-
-![](images/cdw-lab1-ai001.png)
-
-this unfolds this bar and click on EXPLAIN
-
-![](images/cdw-lab1-ai002.png)
-
-The SQL AI Assistant will take a few seconds to generate a outcome.
-
-![](images/cdw-lab1-ai004.png)
-
-This can be inserted for documentation purposes.
-
-
-
 ### Geospatial Query 
 
 Trino's geospatial functions convert raw latitude and longitude data into a relational graph of physical proximity, enabling distance calculations and point-in-polygon joins across federated data sources.
@@ -532,6 +512,7 @@ and select the fields lon = Longitude and lat = Latitude for the Map
 
 ![](images/cdw-geoquery-002.png)
 
+
 ### Surrogate Key 
 
 Trino can use UUID as surrogate keys easy & distributable & fast, but not in sequence and has gaps.
@@ -571,6 +552,7 @@ Result:
 |007d7f86-477c-4bf6-a28b-95b9c98b6b02	| PL	| Aero Peru |
 
 Note: the first column is the new unique SURROGATE_KEY
+
 
 ### Create a SEQUENCE - optional
 
@@ -708,7 +690,7 @@ results
 
 The enforcement engine intercepted the request and alters the data depending on the Ranger policy.
 
-### Data Redaction - Targeted Queries Return Zero Results - Optinal
+### Data Redaction - Targeted Queries Return Zero Results 
 
 When a Redaction policy is active, the engine evaluates the WHERE clause against the transformed value (e.g., x.xxxxxx000@xxxxx.xxx), causing a mismatch with the original clear-text string.
 
@@ -727,6 +709,7 @@ where
  Done. 0 results.
 
  This ensures that even if an unauthorized user knows a specific email address, Cloudera SDX prevents them from confirming its existence or accessing the record.
+
  
 ## Lab - Data Security & Governance
 
@@ -796,6 +779,7 @@ This lineage graph shows the inputs, outputs as well as the processing steps res
 
 The red circle marks the currently selected entity. Atlas will always display the current entity's type in braces next to the entity name (middle, top of the page, e.g. "hive_table"). Clicking on one of the nodes will display a popup menu, which allows us to navigate through the lineage graph.
 
+----
 
 ## Lab 6 - Data Visualization
 
