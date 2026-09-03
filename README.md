@@ -342,12 +342,12 @@ Result: column data statistics
 
 |#|column_name|data_size|distinct_values_count|nulls_fraction|row_count|low_value|high_value|
 | :- |:- |:- |:- |:- |:- |:- |:- |
-|1|year|NULL|14|0|NULL|1995|2008|
-|2|month|NULL|12|0|NULL|1|12|
+|1|year|NULL|4|0|NULL|1995|1998|
+|2|month|NULL|9|0|NULL|2|12|
 |3|dayofmonth|NULL|31|0|NULL|1|31|
 |4|dayofweek|NULL|7|0|NULL|1|7|
-|5|deptime|NULL|1619|0.0218189|NULL|1|2318|
-|6|crsdeptime|NULL|1293|0|NULL|1|1927|
+|5|deptime|NULL|1270|0.02116|NULL|1|2400|
+|6|crsdeptime|NULL|725|0|NULL|0|2359|
 ...
 
 You see statistics immediately after create table as select (CTAS) in Trino's Iceberg connector is due to a specific feature called "Collect on Write."
@@ -365,10 +365,10 @@ Result: showing all 14 partitions with keys (years)
 
 |partition |      record_count|    file_count   |   total_size|
 | :- |:- |:- |:- |
-|[1995] | 5327435 |5      | 57774143|
-|[1996] | 5351983 |7      | 58347109|
-|[1997] | 5411843 |7      | 59631458|
-|[1998] | 5384721 |6      | 59213838|
+|[1995] | 12960 |1      | 150353|
+|[1996] | 38909 |1      | 443193|
+|[1997] | 41657 |1      | 473337|
+|[1998] | 6474  |1      | 76016 |
 ...
 
 Uniform File Distribution: You have roughly 5 to 7 files per partition for ~5M to 7M rows. This is a very "healthy" distribution. These files are relatively small (under 100MB), Trino's can pull these files into memory, decompress the columns, and process them in parallel across your worker nodes effortlessly.
@@ -398,11 +398,11 @@ LIMIT 5;
 Results (same as previous query)
 |tailnum	| flights_count | departure_delay_minutes |	 departure_delay_count|
 | :- | :- | :- | :- |
-|N381UA	| 25287 |341368 | 12280	|
-|N375UA	| 25147 |341103	| 12162 |
-|N673	| 30616 |333744	| 12835	|
-|N366UA	| 24808 |331318	| 12113	|
-|N377UA	| 25105 |328546	| 12163	|
+|N692	| 60 |1355  | 29	|
+|N507US	| 34 |1252	| 15    |
+|N223AA	| 40 |1229	| 17	|
+|N179AW	| 58 |1185	| 24	|
+|N53NW  | 51 |1165	| 22	|
 
 
 The "Airline Marathon" Common Table Expression (CTE) structure
@@ -449,11 +449,11 @@ Expected Output:
 
 | airline_name |	route	| marathon_miles |	duration_minutes |
 | :- | :- | :- | :- |
-| Delta Air Lines Inc.	| ATL to HNL |	4502 |	541 |
-| United Air Lines Inc. |	ORD to HNL |	4243	| 506 |
-| American Airlines Inc. |	ORD to HNL |	4243 |	462 |
-| US Airways Inc. (Merged with America West 9/05. Reporting for both starting 10/07.)	| LIH to PHX |	2979	| 313 |
-| Southwest Airlines Co. |	OAK to PHL |	2510 | 284 |
+| United Air Lines Inc.	| SFO to BOS |	2704 |	309 |
+| American Airlines Inc. |	SJC to BOS |	2689	| 341 |
+| Delta Air Lines Inc. |	SFO to JFK |	2586 |	300 |
+| US Airways Inc. (Merged with America West 9/05. Reporting for both starting 10/07.)	| SFO to PHL |	2521	| 301|
+| Northwest Airlines Inc. |	SEA to BOS |	2496 | 295 |
 
 
 ### SQL AI Assistant - makes SQL development faster, easier, and less error-prone
@@ -566,9 +566,9 @@ Result:
 
 |id	| code |	 description|
 | :- | :- | :- |
-|0089fbea-c17d-4754-88e3-a9aa391bd45a	| AC |	Air Canada |
-|009d2fa7-41f5-4fd0-88c7-74303407fe31 |	BAC	| Business Aircraft Corp. |
-|0103f5b3-d9be-455e-ab9d-0dcb2531196a	| ECR	| East Coast Airways |
+|00055e5c-e74c-4231-af24-94bb8b0c357c	| AR |	Aerolineas Argentinas |
+|000a6612-a3af-467f-9025-72a22630d900 |	KEA	| Keene Airways |
+|007d7f86-477c-4bf6-a28b-95b9c98b6b02	| PL	| Aero Peru |
 
 Note: the first column is the new unique SURROGATE_KEY
 
