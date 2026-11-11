@@ -817,7 +817,13 @@ Click on Show Data
 
 ![](images/dataviz_p02.png)
 
-Click on CREATE
+Click on Save as Dataset
+
+![](images/dataviz_p03.png)
+
+Click New Dashboard
+
+![](images/dataviz_p04.png)
 
 
 This Dataset shows and click on New Dashboard
