@@ -789,7 +789,7 @@ A example of dashboard:
 
 A quick way to create a new dashboard by the following steps:
 
-Navigate to Cloudera Data Visualizaton and click on NEW Query:
+Navigate to Cloudera Data Visualizaton and click on New SQL:
 
 
 ![](images/dataviz_p01.png)
@@ -810,10 +810,13 @@ JOIN iceberg.cpearce.fct_flights f ON c.uniquecarrier = f.uniquecarrier AND try_
 JOIN iceberg.cpearce.dim_airports o ON f.origin = o.iata
 JOIN iceberg.cpearce.dim_airports d ON f.dest = d.iata
 GROUP BY 1,2,3,4
-ORDER BY 2 DESC;
+ORDER BY 2 DESC
 ```
 
 Click on Show Data
+
+![](images/dataviz_p02.png)
+
 Click on CREATE
 
 
