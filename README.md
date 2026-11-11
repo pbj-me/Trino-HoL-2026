@@ -789,12 +789,11 @@ A example of dashboard:
 
 A quick way to create a new dashboard by the following steps:
 
-Navigate to DataVisualizaton and click on NEW DATASET
+Navigate to Cloudera Data Visualizaton and click on NEW Query
 
-Enter:
+![](images/dataviz-p01.png)
 
-Dataset Title: ```Top Grumpy Routes```
-Dataset Source:  ```SQL```
+
 Enter SQL below:
 
 ```sql
