@@ -792,7 +792,7 @@ A quick way to create a new dashboard by the following steps:
 Navigate to Cloudera Data Visualizaton and click on NEW Query:
 
 
-![](dataviz_p01.png)
+![](images/dataviz_p01.png)
 
 
 
