@@ -136,7 +136,7 @@ WITH (
 Check that you created tables
 
 ```sql
-SHOW TABLES;
+SHOW TABLES FROM iceberg.${your_dbname};
 ```
 
 
@@ -301,7 +301,7 @@ This takes a few minutes to read and write the data back.
 Check that you created managed & external tables
 
 ```sql
-SHOW TABLES;
+SHOW TABLES FROM iceberg.${your_dbname};
 ```
 
 Results
