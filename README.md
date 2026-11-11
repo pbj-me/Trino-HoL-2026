@@ -825,10 +825,7 @@ Click New Dashboard
 
 ![](images/dataviz_p04.png)
 
-
-This Dataset shows and click on New Dashboard
-
-![](images/cdwlab10-0010.png)
+![](images/dataviz_p05.png)
 
 
 The UI create a new visual screen and click on Explore Options in the upper right corner.
