@@ -789,7 +789,7 @@ A example of dashboard:
 
 A quick way to create a new dashboard by the following steps:
 
-Navigate to Cloudera Data Visualizaton and click on NEW Query
+Navigate to Cloudera Data Visualizaton and click on NEW Query:
 
 ![](images/dataviz-p01.png)
 
