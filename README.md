@@ -647,9 +647,9 @@ Expected outcome (may vary)
 
  |uniquecarrier	|aircraft_model	|total_complaints	|avg_severity|
  | :- | :- | :- | :- |
- |AA |	DC-9-82(MD-82)	|203	|2.51|
- |DL	|757-232|	108	|2.31|
- |UA|	737-322	| 91	|2.48|
+ |AA |	DC-9-82(MD-82)	|2981	|2.72|
+ |DL	|MD-88|	2848|3.16|
+ |DL|	757-232	| 1504	|2.99|
 
 
  This lab demonstrates that Trino’s query federation effectively collapses data silos by enabling real-time joins between operational PostgreSQL feedback and historical Iceberg flight archives. By eliminating the need for data movement, you’ve established a high-performance architecture that delivers immediate visibility into how specific aircraft models impact the overall customer experience.
