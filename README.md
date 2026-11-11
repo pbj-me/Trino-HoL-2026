@@ -827,59 +827,9 @@ Click New Dashboard
 
 ![](images/dataviz_p05.png)
 
+Use the panel to the left to select your dimensions, measures and visual type to use.  Finally hit refresh.
 
-The UI create a new visual screen and click on Explore Options in the upper right corner.
+![](images/dataviz_p06.png)
 
-![](images/cdwlab10-0011.png)
-
-Click on Visual Types
-
-![](images/cdwlab10-0012.png)
-
-Select the dimenions (three fields)
-- Routes
-- uniquecarrier
-- complaint_volume
-
-Click on SEE ALL VISUALS
-
-![](images/cdwlab10-0013.png)
-
-Scroll up/down and select one of the proposed visuals i.e. Scattered w/Trendline
-
-![](images/cdwlab10-0014.png)
-
-The selected visual appears in the window.
-
-![](images/cdwlab10-0015.png)
-
-This show a fast Dashboard creation.
-
-### Optional - Lab 6 Data Visualization - Step by Step
-
-![](images/dataviz-011.png)
-
-
-`	`Open DataViz
-
-
-|**Step**|**Description**|
-| :-: | :- |
-|1|<p>Open Data Visualization ![](images/cdw-lab9-00nav.png) ![](images/cdw-lab9-01nav.png)</p><p></p><p></p><p></p><p></p>|
-|2|<p>Overview</p><p>![](images/cdw-lab9-02nav.png)</p>|
-|3|<p>Switch to Data Tab</p><p>![](images/cdw-lab9-03nav.png)</p><p>There a demo datasets shown here (you can explore by your own)</p>|
-|4|<p>Click on the Connection and then new dataset</p><p></p><p>![](images/cdw-lab9-04nav.png)</p><p></p>|
-|5|<p>Enter name: airline_logistics the select database: airlinedata and table: flights_orc and click CREATE</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.023.png)</p><p></p><p></p><p>     </p><p></p>|
-|6|<p>Edit Dataset - click on the name: airline_logistics</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.024.png)</p><p></p><p>The Dataset Details</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.026.png)</p>|
-|7|<p>Click on Fields - List fields of the Dataset</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.027.png) <p>Show fields, each column of the FLIGHTS table, in two categories: Dimensions and Measures</p>    ![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.028.png)</p><p></p><p></p>|
-|8|<p>Join PLANES table with FLIGHTS table - click on Data Model</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.029.png)</p><p>Then Click on Edit Model and the + </p><p>![](images/cdw-lab9-08nav.png)</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.030.png)  </p><p></p><p></p><p>Select the source and target column to join the two tables ![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.031.png)</p>|
-|9|<p>Add AIRLINES table to the Dataset</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.032.png)  </p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.033.png)</p><p>DON'T FORGET to click on SAVE ! </p><p>![](images/cdw-lab9-09nav.png)</p> |
-|10|<p>Click on SHOW DATA to view dataset</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.034.png)</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.035.png)</p><p></p><p>Scroll right for all columns of the dataset</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.036.png)</p>|
-|11|<p>Go back to Data Model to Edit Fields</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.037.png)</p><p></p><p>Click on EDIT FIELDS</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.038.png)</p><p></p><p>Start with changing the display title of the field: deptdelay</p><p></p><p>Edit Field properties</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.041.png)</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.042.png)  </p><p>Change Field Name into: Dep Delay</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.043.png)</p><p></p><p></p><p></p><p>Add a new field: route that concatenates two fields origin and dest</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.045.png)</p><p>First clone the field: origin</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.046.png)     ![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.047.png)</p><p></p><p></p><p>Change Display Name to “Route”</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.049.png)</p><p></p><p>Edit Expression</p><p></p><p>Expression: </p><p>**concat( [origin],'-', [dest])**</p><p></p><p>Validate (to check for any errors) and Click Apply (to accept changes)</p><p>![](images/cdw-lab9-10nav.png)</p>|
-|12|<p>The Dataset with all fields looks:</p><p>![](images/cdw-lab9-12nav.png)</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.054.png)</p><p>Click Save that completes the dataset</p>|
-|13|<p>Create Dashboard</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.055.png)</p><p>` `![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.056.png)</p>|
-|14|<p>First Visual - select bar and drag the field: route into x-axis and Dep delay into y-axis </p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.057.png)</p><p></p><p></p><p>Change Dep Delay Aggregate to Average</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.058.png)</p><p></p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.059.png)</p><p></p><p></p><p>Change to only show Top 25 Avgs</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.060.png)</p><p></p><p>Click on []Enter/Edit Expression </p><p>![](images/datvizavg.png)</p><p></p><p>avg(([Dep delay])) as 'Avg Dep Delay' and select 'average' as the aggregate</p><p>![](images/dashdes.png)</p><p>Do not worry if you receive a warning message.  The new alias is created</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.061.png)</p><p></p><p>That should look likes</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.062.png)</p><p></p><p>Now click on refresh Visual</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.063.png)</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.064.png)</p><p></p><p>Add Title & Subtitle for Dashboard</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.065.png)</p><p></p><p>Add Title & Subtitle for this chart</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.066.png)</p><p></p>|
-|15|<p>Add Filter</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.078.png)</p><p></p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.079.png)</p><p></p><p></p><p>Select values from prompt</p><p>![](images/cdw-lab9-20nav.png)</p><p></p><p></p><p></p>|
-|17|<p>Save Dashboard</p><p>![](images/Aspose.Words.10bb90cf-0d99-47f3-a995-23ef2b90be86.088.png)</p><p></p><p>![](images/cdw-lab9-22nav.png)</p>|
 
 
