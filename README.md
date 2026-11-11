@@ -449,11 +449,11 @@ Expected Output:
 
 | airline_name |	route	| marathon_miles |	duration_minutes |
 | :- | :- | :- | :- |
-| United Air Lines Inc.	| SFO to BOS |	2704 |	309 |
-| American Airlines Inc. |	SJC to BOS |	2689	| 341 |
-| Delta Air Lines Inc. |	SFO to JFK |	2586 |	300 |
-| US Airways Inc. (Merged with America West 9/05. Reporting for both starting 10/07.)	| SFO to PHL |	2521	| 301|
-| Northwest Airlines Inc. |	SEA to BOS |	2496 | 295 |
+| Delta Air Lines Inc.	| HNL to ATL |	4502 |	503|
+| American Airlines Inc. |	HNL to ORD |	4243	| 454|
+| United Air Lines Inc.|	HNL to ORD|	4243 |	464 |
+| US Airways Inc. (Merged with America West 9/05. Reporting for both starting 10/07.)	| PHX to LIH |	2979	| 376|
+| Southwest Airlines Co.|	PHL to OAK|	2510 | 347 |
 
 
 ### Geospatial Query 
